@@ -283,9 +283,9 @@ section{padding-block:clamp(64px,9vw,120px)}
 .v3 .legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:-1px}
 
 /* vis 4: responsive frame with container queries */
-.v4{width:88%;height:300px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;contain:layout size}
+.v4{width:min(88%,420px);height:480px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;contain:layout size}
 .frame{
-  container-type:inline-size;width:100%;height:240px;overflow:hidden;will-change:width;background:var(--surface);border:1px solid var(--line);
+  container-type:inline-size;width:100%;will-change:width;background:var(--surface);border:1px solid var(--line);
   border-radius:14px;padding:12px;box-shadow:var(--shadow);animation:resize 8s var(--ease) infinite;
 }
 @keyframes resize{0%,20%{width:100%}40%,60%{width:48%}80%,100%{width:100%}}
@@ -297,7 +297,8 @@ section{padding-block:clamp(64px,9vw,120px)}
 .fgrid i:first-child{grid-column:span 2;grid-row:span 2;aspect-ratio:auto;background:linear-gradient(135deg,var(--accent),color-mix(in oklab,var(--accent) 40%,var(--warm)))}
 @container (max-width:240px){
   .fgrid{grid-template-columns:1fr}
-  .fgrid i:first-child{grid-column:auto;grid-row:auto;aspect-ratio:4/3}
+  .fgrid i{aspect-ratio:2/1}
+  .fgrid i:first-child{grid-column:auto;grid-row:auto;aspect-ratio:2/1}
   .fgrid i:nth-child(n+4){display:none}
 }
 .bp{font:400 .72rem var(--mono);color:var(--muted)}
@@ -555,7 +556,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-bet
           </div>
           <div class="case-vis" aria-hidden="true">
             <div class="v4">
-              <div class="frame"><div class="bar"><i></i><i></i></div><div class="fgrid"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+              <div class="frame"><div class="bar"><i></i><i></i></div><div class="fgrid"><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
               <div class="bp">@container (max-width: 240px) → 1 column</div>
             </div>
           </div>
